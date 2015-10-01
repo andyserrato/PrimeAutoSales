@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="layout/template.xhtml">
+            <ui:define name="content">
+                <form method="post" action="j_security_check" name="loginForm">
+                    <center>
+                        <p align="center" class="sub_head_sub"><br />
+                            <strong>Acme Bookstore</strong>
+                        </p>
+                        <span class="normal">
+                            You must authenticate to gain access to this application.
+                            If you require an account, please contact an administrator
+                        </span>
+                        <span class="error">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" globalOnly="true" />
+                        </span>
+                        <p:panelGrid columns="2">
+                            <p:outputLabel id="userNameLabel" for="j_username" value="Username:"/>
+                            <p:inputText id="j_username" autocomplete="off"/>
+                            <p:outputLabel id="passwordLabel" for="j_password" value="Password"/>
+                            <p:password id="j_password" feedback="true" />
+                        </p:panelGrid>
+                        <h:panelGroup>
+                            <h:commandButton type="submit" value="Login"/>
+                            <h:commandButton type="reset" value="Clear"/>
+                        </h:panelGroup>
+                    </center>
+                </form>
+        </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
